@@ -8,3 +8,4 @@ clean:
 	rm -rf parse_request
 	rm -rf parse_web
 	rm -rf *output*
+	rm -rf *.png
