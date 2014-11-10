@@ -8,10 +8,11 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
 	string line;
-	ifstream myfile("100.0.requests.172.20.36.138.txt");
-	ofstream of("request_output.txt");
+	ifstream myfile(argv[1]);
+	string output_file_name = "output_" + (string) argv[1];
+	ofstream of(output_file_name.c_str());
 	int num_proto = 4;
-	int max_num_requests = atoi(argv[1]);
+	int max_num_requests = atoi(argv[2]);
 	double time;
 
 	if (myfile.is_open()) {

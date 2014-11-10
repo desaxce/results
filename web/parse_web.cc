@@ -8,10 +8,11 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
 	string line;
-	ifstream myfile("100.0.yiping.172.20.36.138.txt");
-	ofstream of("web_output.txt");
+	ifstream myfile(argv[1]);
+	string output_file_name = "output_" + (string) argv[1];
+	ofstream of(output_file_name.c_str());
 	int num_proto = 4;
-	int max_num_pages = atoi(argv[1]);
+	int max_num_pages = atoi(argv[2]);
 	double time;
 
 	if (myfile.is_open()) {

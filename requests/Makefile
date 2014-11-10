@@ -1,4 +1,4 @@
-all: parse_web parse_request
+all: parse_request
 
 %: %.c
 	g++ -o $@ $^
@@ -6,6 +6,5 @@ all: parse_web parse_request
 
 clean: 
 	rm -rf parse_request
-	rm -rf parse_web
 	rm -rf *output*
 	rm -rf *.png
