@@ -24,11 +24,15 @@ int main(int argc, char* argv[]) {
 			of << html << " ";
 			for (int i = 0; i < num_proto; ++i) {
 				double result = 0;
+				double divide = times_to_reach;
 				for (int j = 0; j < times_to_reach; ++j) {
 					myfile >> time;
 					result += time;
+					if (time == 0) {
+						divide--;
+					}
 				}
-				of << result/times_to_reach << " ";
+				of << result/divide << " ";
 			}
 			of << endl;
 		}
