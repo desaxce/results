@@ -3,7 +3,8 @@ gnuplot << EOF
 
 reset
 red = "#FF0000"; green = "#00FF00"
-
+yellow = "#FFFF00"; blue = "#0000FF";
+other = "#00FFFF";
 set style fill transparent solid 0.5 border -1
 set boxwidth 0.9 relative
 
@@ -23,13 +24,14 @@ set ytics nomirror
 
 set yrange [0:*]
 
-plot "$1" using 2:xticlabels(1) title 'HTTP/1.1' with filledcurves x1 lt rgb red, \
-	 "$1" using 4:xticlabels(1) title 'HTTP/2' with filledcurves x1 lt rgb green
+plot "$1" using (\$4/\$2):xticlabels(1) title '0ms' with filledcurves x1 lt rgb red, \
+	 "$2" using (\$4/\$2):xticlabels(1) title '50ms' with filledcurves x1 lt rgb green, \
+	 "$3" using (\$4/\$2):xticlabels(1) title '100ms' with filledcurves x1 lt rgb yellow, \
+	 "$4" using (\$4/\$2):xticlabels(1) title '150ms' with filledcurves x1 lt rgb blue, \
+	 "$5" using (\$4/\$2):xticlabels(1) title '200ms' with filledcurves x1 lt rgb other
+
 load "loop_til_escape"
 
-#plot "$1" using 3:xticlabels(1) title 'HTTP/1.1 secure' with filledcurves x1 lt rgb red, \
-#	 "$1" using 5:xticlabels(1) title 'HTTP/2 secure' with filledcurves x1 lt rgb green
-#load "loop_til_escape"
 #unset multiplot
 
 EOF

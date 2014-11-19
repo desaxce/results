@@ -18,18 +18,20 @@ set grid
 set xlabel 'Webpage requested'
 set ylabel 'Page Loading Time (PLT) in seconds'
 
+
 set xtics rotate by 45 right nomirror
 set ytics nomirror
 
 set yrange [0:*]
 
-plot "$1" using 2:xticlabels(1) title 'HTTP/1.1' with filledcurves x1 lt rgb red, \
+#plot "$1" using 3:xticlabels(1) title 'HTTP/1.1 secure' with filledcurves x1 lt rgb red, \
+#	 "$1" using 2:xticlabels(1) title 'HTTP/1.1' with filledcurves x1 lt rgb green
+#load "loop_til_escape"
+
+plot "$1" using 5:xticlabels(1) title 'HTTP/2 secure' with filledcurves x1 lt rgb red, \
 	 "$1" using 4:xticlabels(1) title 'HTTP/2' with filledcurves x1 lt rgb green
 load "loop_til_escape"
 
-#plot "$1" using 3:xticlabels(1) title 'HTTP/1.1 secure' with filledcurves x1 lt rgb red, \
-#	 "$1" using 5:xticlabels(1) title 'HTTP/2 secure' with filledcurves x1 lt rgb green
-#load "loop_til_escape"
 #unset multiplot
 
 EOF
