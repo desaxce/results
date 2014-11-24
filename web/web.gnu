@@ -7,7 +7,7 @@ red = "#FF0000"; green = "#00FF00"
 set style fill transparent solid 0.5 border -1
 set boxwidth 0.9 relative
 
-set terminal png enhanced size 900,600 truecolor
+set terminal png enhanced size 900,600 truecolor font ',20'
 set output '$1.png'
 
 #set multiplot layout 1, 2
