@@ -11,7 +11,7 @@ set boxwidth 0.9 relative
 set terminal png enhanced size 900,600 truecolor font ',20'
 set output 'output.png'
 
-set title '10 tests effectuÃs'
+set title '10 tests effectués'
 set grid
 
 set format x ""
@@ -23,7 +23,7 @@ set ytics nomirror 1.2,0.1
 
 #set yrange [0:*]
 
-plot "nopush.txt" using 0:1 title 'No push' with lines lt rgb red, \
-	 "push.txt" using 0:1 title 'With push' with lines lt rgb green
+plot "nopush1.txt" using 0:1 title 'Sans' with lines lt rgb red, \
+	 "push1.txt" using 0:1 title 'Avec' with lines lt rgb green
 
 EOF
