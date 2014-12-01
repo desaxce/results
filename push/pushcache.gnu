@@ -19,11 +19,11 @@ set ylabel 'Temps de chargement (en s)'
 
 
 set xtics nomirror
-set ytics nomirror 1.2,0.1
+set ytics nomirror 0.6,0.1
 
 #set yrange [0:*]
 
-plot "nopush.txt" using 0:1 title 'Sans' with lines lt rgb red, \
-	 "push.txt" using 0:1 title 'Avec' with lines lt rgb green
+plot "nopushcache.txt" using 0:1 title 'Sans' with lines lt rgb red, \
+	 "pushcache.txt" using 0:1 title 'Avec' with lines lt rgb green
 
 EOF
