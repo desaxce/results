@@ -11,14 +11,14 @@ set output '$1.png'
 set key left top
 #set multiplot layout 1, 2
 
-set title 'Image \~1Mo: delay=100ms; losses=0%'
+#set title 'Image \~1Mo: delay=100ms; losses=0%'
 set grid
 
-set xrange [0:100]
+set xrange [0:99]
 set yrange [0:*]
 
 # English labels
-set ylabel 'Page Load Times (in seconds)'
+set ylabel 'Page Load Time (in seconds)'
 set xlabel 'Number of requests'
 
 # French labels
@@ -26,7 +26,6 @@ set xlabel 'Number of requests'
 #set xlabel 'Nombre de requêtes'
 
 set ytics 0,1
-
 #plot "$1" using 0:1 title 'HTTP/1.1' with filledcurves x1 lt rgb red, \
 #	 "$1" using 0:3 title 'HTTP/2' with filledcurves x1 lt rgb green
 #load "loop_til_escape"

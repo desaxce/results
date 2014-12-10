@@ -12,11 +12,14 @@ set output '$1.png'
 
 #set multiplot layout 1, 2
 
-set title '3G (ping \~380ms) - Ratio: 0.803'
+#set title '3G (ping \~380ms) - Ratio: 0.803'
 set grid
 
-set xlabel 'Site Web'
-set ylabel 'Temps de chargement (en s)'
+#set xlabel 'Site Web'
+#set ylabel 'Temps de chargement (en s)'
+
+set xlabel 'Website'
+set ylabel 'Page Load Time (in seconds)'
 
 set xtics rotate by 45 right nomirror
 set ytics nomirror 0,5
