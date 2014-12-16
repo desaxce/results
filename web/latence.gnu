@@ -5,31 +5,26 @@ reset
 red = "#FF0000"; green = "#00FF00";
 yellow = "#FFFF00"; blue = "#0000FF";
 other = "#00FFFF";
-set style fill transparent solid 0.5 border -1
-set boxwidth 0.9 relative
 
-set terminal png enhanced size 900,600 truecolor font ',19'
-set output '$1.png'
+set terminal eps
+set termoption dashed
+set output '$1.eps'
+set key below
 
-#set multiplot layout 1, 2
-
-#set title 'Page loading times comparison: Wired'
-set title 'Simulation de latence'
 set grid
 
-set xlabel 'Site Web'
-set ylabel 'Ratio HTTP/2 sur HTTP/1.1'
+set xlabel 'Website'
+set ylabel 'HTTP/2 over HTTP/1.1 ratio'
 
-set xtics rotate by 45 right nomirror
-set ytics nomirror
+set xtics nomirror
 
-set yrange [0:1.8]
+set yrange [0:*]
 
-plot "$1" using (\$4/\$2):xticlabels(1) title '0ms' with linespoints lt rgb red
-#	 "$2" using (\$4/\$2):xticlabels(1) title '50ms' with linespoints lt rgb green
-#	 "$3" using (\$4/\$2):xticlabels(1) title '100ms' with linespoints lt rgb yellow
-#	 "$4" using (\$4/\$2):xticlabels(1) title '150ms' with linespoints lt rgb blue
-#	 "$5" using (\$4/\$2):xticlabels(1) title '200ms' with linespoints lt rgb other
+plot "$1" using (\$4/\$2) title '0ms' with linespoints lt rgb red lw 5, \
+	 "$2" using (\$4/\$2) title '50ms' with linespoints lt rgb green lw 5, \
+	 "$3" using (\$4/\$2) title '100ms' with linespoints lt rgb yellow lw 5, \
+	 "$4" using (\$4/\$2) title '150ms' with linespoints lt rgb blue lw 5, \
+	 "$5" using (\$4/\$2) title '200ms' with linespoints lt rgb other lw 5
 
 load "loop_til_escape"
 
