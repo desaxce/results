@@ -7,6 +7,7 @@ set style line 1 lt 1 lc rgb "red" lw 5
 set style line 2 lt 2 lc rgb "green" lw 5
 
 #set terminal eps enhanced size 1024,600 truecolor font ',24'
+
 set terminal eps enhanced
 set termoption dashed
 set output '$1.eps'
